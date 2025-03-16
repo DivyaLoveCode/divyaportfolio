@@ -72,7 +72,7 @@ nav #con:hover{
 }
 nav #con{
 	padding: .1em 1.5em;
-	color:white !important;
+	color:white ;
 	border-radius:25px;
 	outline: none;
 	background: linear-gradient(45deg,#1a45bd,#23d93e);
@@ -250,19 +250,23 @@ form ::placeholder{
 
 
 @media (max-width: 768px) {
+ 
   #con {
     padding: 0.5em 1em;
-    background: none;
+    background: none !important;
     color: #44fa37 !important;
     display: inline-block;
     border-radius: 0;
     box-shadow: none;
     transition: none;
+    padding:10px 0px !important;
   }
 
-  .nav-link {
-    font-size: 1.3em;
+  .nav-link,#con {
+    font-size: 1em !important;
+    font-weight: 400 !important;
     padding: 0.5em 1em;
+    font-family: "Merriweather", serif;
   }
 
   .nav-item {
@@ -316,24 +320,59 @@ form ::placeholder{
 }
 /* For small screens (mobile devices) */
 @media (max-width: 768px) {
+	 /* Change the position of the navbar to be centered */
     .navbar-collapse {
         position: absolute;
         top: 60px; /* Adjust this to match the height of your navbar */
         right: 0;
-        width: 100%;
-        background: linear-gradient(45deg,#000046,#1cb5e0); /* Or any color to match the background */
+        width: 80%; /* Make the navbar take up 80% of the screen width */
+        background: linear-gradient(45deg, #000046, #1cb5e0); /* Customize background */
         z-index: 1000; /* Ensure it appears above other elements */
+        left: 50%; /* Center it horizontally */
+        transform: translateX(-50%); /* Adjust for proper centering */
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        padding-bottom: 10px;
     }
+
+    /*.navbar-collapse {
+        position: absolute;
+        top: 60px; 
+        right: 0;
+        width: 100%;
+        
+        background: linear-gradient(45deg,#000046,#1cb5e0); 
+        z-index: 1000; 
+    }*/
 
     .navbar-nav {
         display: flex;
         flex-direction: column;
         width: 100%;
         text-align: center;
+        padding-top: 25px;
     }
 
     .navbar-nav .nav-item {
         width: 100%;
         text-align: center;
+       
     }
+     /* Add bottom border to each nav-link */
+    .navbar-nav .nav-item .nav-link {
+        border-bottom: 2px solid rgba(255, 255, 255, 0.6); /* Adjust the color as per your theme */
+        padding-bottom: 20px; /* Add padding to give some space */
+        margin-bottom: 20px; /* Optional: adjust spacing between links */
+    }
+
+   
+
+    /* Add a hover effect for the nav-link */
+    .navbar-nav .nav-item .nav-link:hover {
+        border-color: #ffcc00; /* Change this color to the desired hover effect */
+    }
+    .navbar-nav .nav-item:last-child .nav-link {
+        border-bottom: none !important; /* Remove bottom border */
+    }
+
 }
